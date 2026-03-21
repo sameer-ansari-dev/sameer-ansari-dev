@@ -20,4 +20,4 @@ I enjoy solving real business problems using clean and scalable code.
 
 ## 📫 Connect
 Email: sameeransarispidy4444@gmail.com
-LinkedIn: [linkedin.com/in/yourname](https://www.linkedin.com/in/ansari-mohammed-sameer-naseem)
+LinkedIn: [linkedin.com/in/ansari-mohammed-sameer-naseem](https://www.linkedin.com/in/ansari-mohammed-sameer-naseem)
