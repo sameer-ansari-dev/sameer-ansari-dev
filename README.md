@@ -4,7 +4,7 @@
 
 <br/>
 
-<img src="assets/avatar-glow.svg" width="230" alt="Sameer" />
+<img src="avatar-glow.svg" width="230" alt="Sameer" />
 
 <br/><br/>
 
