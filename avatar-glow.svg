@@ -1,0 +1,81 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3ea6ff" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#1f6feb" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="50%" stop-color="#2f81f7"/>
+      <stop offset="100%" stop-color="#7f5af0"/>
+    </linearGradient>
+
+    <clipPath id="avatarClip">
+      <circle cx="210" cy="210" r="130"/>
+    </clipPath>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- Floating group: whole avatar gently drifts up and down -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; 0 -10; 0 0; 0 10; 0 0" dur="6s" repeatCount="indefinite"/>
+
+    <!-- Outer pulsing glow (breathing effect) -->
+    <circle cx="210" cy="210" r="170" fill="url(#glowGrad)" filter="url(#softBlur)">
+      <animate attributeName="r" values="165;180;165" dur="3.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0.9;0.55" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Slow rotating dashed orbit ring (cyberpunk accent) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 210 210" to="360 210 210" dur="14s" repeatCount="indefinite"/>
+      <circle cx="210" cy="210" r="155" fill="none" stroke="url(#ringGrad)"
+        stroke-width="2" stroke-dasharray="6 10" opacity="0.8"/>
+    </g>
+
+    <!-- Counter-rotating thin ring -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+      <circle cx="210" cy="210" r="145" fill="none" stroke="#00e5ff"
+        stroke-width="1" stroke-dasharray="2 14" opacity="0.5"/>
+    </g>
+
+    <!-- Solid neon border ring -->
+    <circle cx="210" cy="210" r="134" fill="none" stroke="url(#ringGrad)" stroke-width="3">
+      <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Portrait -->
+    <g clip-path="url(#avatarClip)">
+      <image href="portrait.png" x="70" y="70" width="280" height="280" preserveAspectRatio="xMidYMid slice"/>
+      <!-- subtle blue tint overlay for cohesion with the theme -->
+      <circle cx="210" cy="210" r="130" fill="#0b3d91" opacity="0.06"/>
+    </g>
+
+    <!-- Four small orbiting nodes for a "tech" accent -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        from="0 210 210" to="360 210 210" dur="10s" repeatCount="indefinite"/>
+      <circle cx="210" cy="55" r="5" fill="#00e5ff">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="365" cy="210" r="4" fill="#7f5af0">
+        <animate attributeName="opacity" values="1;0.3;1" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="210" cy="365" r="5" fill="#2f81f7">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="55" cy="210" r="4" fill="#00e5ff">
+        <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>
